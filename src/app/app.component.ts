@@ -1,3 +1,4 @@
+//this is the most important file in the component
 import { Component } from '@angular/core';
 
 @Component({
