@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UserAuthModule } from './user-auth/user-auth.module'
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { DummyComponent } from './dummy/dummy.component';
 import { UserComponent } from './user/user.component';
 import { UserNameComponent } from './user-name/user-name.component';
 import { UserDataComponent } from './user-data/user-data.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { UserDataComponent } from './user-data/user-data.component';
     DummyComponent,
     UserComponent,
     UserNameComponent,
-    UserDataComponent
+    UserDataComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserAuthModule
+    UserAuthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

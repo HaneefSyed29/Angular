@@ -1,31 +1,108 @@
 <div class="body">
+  <app-header></app-header>
+  <br />
+  <form #basicForm="ngForm" (ngSubmit)="getData1(basicForm.value)">
+    <input type="text" ngModel name="name" placeholder="Enter username" />
+    <br />
+    <br />
+    <input type="text" ngModel name="password" placeholder="Enter password" />
+    <br />
+    <br />
+    <button type="submit">Register</button>
+  </form>
+  <h1>
+    {{userdata.name}}
+  </h1>
+  <h1>
+    {{userdata.password}}
+  </h1>
   <!-- interpolation is used to display the dynamic data -->
-  <h1>Hello World {{title}}</h1> <!-- {{}} ishe kehte hai ham interpolation it can be possible to see data and function and also js functions is also can do -->
+  <h1>Hello World {{ title }}</h1>
+  <!-- {{}} ishe kehte hai ham interpolation it can be possible to see data and function and also js functions is also can do -->
   <!-- we cannot check the type of or redecalre the value of interpolation variable ++ ye bhi nhi -->
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque veritatis culpa corporis provident adipisci dignissimos laborum minus praesentium architecto, explicabo corrupti suscipit asperiores eos, tempora, quisquam minima autem nulla nihil? Non doloribus magnam neque necessitatibus explicabo voluptate dolore ipsum dolorem commodi consequuntur animi, voluptatem, libero adipisci dolorum distinctio enim. Rem?</p>
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque veritatis
+    culpa corporis provident adipisci dignissimos laborum minus praesentium
+    architecto, explicabo corrupti suscipit asperiores eos, tempora, quisquam
+    minima autem nulla nihil? Non doloribus magnam neque necessitatibus
+    explicabo voluptate dolore ipsum dolorem commodi consequuntur animi,
+    voluptatem, libero adipisci dolorum distinctio enim. Rem?
+  </p>
   <app-login></app-login>
   <app-user></app-user>
   <app-user-name></app-user-name>
   <app-signin></app-signin>
   <!-- click is the event in the next line -->
   <button type="submit" (click)="getName('Haneef')">CLICK ME</button>
-  <br>
-  <br>
+  <br />
+  <br />
   <button type="submit" (dblclick)="getConsole()">click me as well</button>
-  <br>
-  <br>
+  <br />
+  <br />
   <!-- now getting the value of data from the frontend part -->
   <!-- if i need the value that is typing in frontend then we can do this by adding id and id.val -->
   <!-- key up mai pehle value ati hai  -->
-  <input type="text" #box1 placeholder="event KeyUp" (keyup)="getData(box1.value)">
-  <br>
-  <br>
+  <input
+    type="text"
+    #box1
+    placeholder="event KeyUp"
+    (keyup)="getData(box1.value)"
+  />
+  <br />
+  <br />
   <!-- key down is done slow and have prev press value -->
-  <input type="text" #box2 placeholder="event KeyDown" (keydown)="getData(box2.value)">
-  <br>
-  <br>
+  <input
+    type="text"
+    #box2
+    placeholder="event KeyDown"
+    (keydown)="getData(box2.value)"
+  />
+  <br />
+  <br />
   <button type="submit" (click)="getData('Haneef')">Also click me</button>
+  <br />
+  <br />
+  <!-- idhar niche boxy ki value ki jagah ham name aur placeholder bhi pass kr sakte hai -->
+  <input
+    #boxy
+    type="text"
+    placeholder="Input dedo"
+    (keyup)="getValue(boxy.value)"
+  />
+  <h1>Tune jho type kiya hai vo yaha hai {{ displayValue }}</h1>
+  <button type="button" (click)="increase()">+</button>
+  <h1>{{ meranumber }}</h1>
+  <button type="button" (click)="decrease()">-</button>
 
+  <!-- property binding  -->
+  <!-- in interpolation we use {{}} brackets and in property Binding we have to use like this [value]=name  -->
+  <!-- thsi property bindng is used in button disabled as well  -->
+  <!-- "   " isme likhna naki bahar -->
+  <h1 *ngIf="valuee; else elseBlock">Hello World</h1>
+  <ng-template #elseBlock>
+    <h1>Hello Haneef</h1>
+  </ng-template>
+
+  <!-- chalo switch case use krte hai  -->
+
+  <div [ngSwitch]="color">
+    <h1 *ngSwitchCase="'red'" style="color: red">Red Color</h1>
+    <h1 *ngSwitchCase="'green'" style="color: green">Green Color</h1>
+  </div>
+
+  <h3 *ngFor="let items of users">Name is: {{ items }}</h3>
+  <h4 *ngFor="let item of usersDetails">
+    Name: {{ item.username }} Roll: {{ item.roll }}
+  </h4>
+
+  <!-- style binding  -->
+  <h1 [style.color]="color">Hello Haneef</h1>
+
+  <!-- toggle karna hai -->
+  <button type="button" (click)="changeShow(show)">Toggle</button>
+  <h1 *ngIf="show">Hey how are you ?</h1>
+
+  <!-- installing bootstrap in angular  -->
 </div>
 
 <!-- user- auth is complete module 
@@ -34,4 +111,3 @@ module are not  reusable in the angular
 module consist of mainly the whole components and as well as the pips and services -->
 
 <!-- important angular cli command -->
-

@@ -8,6 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-app';
+  displayValue: string = '';
+  show: boolean = true;
+  valuee: boolean = true;
+  userdata: any = {};
+  color: string = "green";
+  users= ['haneef', 'sahil', 'fazal', 'sanket', 'harshal'];
+  usersDetails =[
+    {username: 'haneef', roll:'1'},
+    {username:'sahil', roll:'2'},
+    {username: 'fazal', roll:'3'}
+  ];
+  meranumber: number = 0;
   getName(name : string){
     alert("Function " + name);
   }
@@ -16,5 +28,22 @@ export class AppComponent {
   }
   getData(val: any){
     console.log(val);
+  }
+  getValue(val: string){
+    this.displayValue = val;
+    console.warn(val);
+  }
+  decrease(){
+     this.meranumber--;
+  }
+  increase(){
+    this.meranumber++;
+  }
+  getData1(data: any){
+    console.warn(data);
+    this.userdata = data;
+  }
+  changeShow(todo: boolean){
+    this.show = !todo;
   }
 }
