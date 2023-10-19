@@ -1,4 +1,37 @@
 <div class="body">
-  <h1>Hello World</h1>
+  <!-- interpolation is used to display the dynamic data -->
+  <h1>Hello World {{title}}</h1> <!-- {{}} ishe kehte hai ham interpolation it can be possible to see data and function and also js functions is also can do -->
+  <!-- we cannot check the type of or redecalre the value of interpolation variable ++ ye bhi nhi -->
   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque veritatis culpa corporis provident adipisci dignissimos laborum minus praesentium architecto, explicabo corrupti suscipit asperiores eos, tempora, quisquam minima autem nulla nihil? Non doloribus magnam neque necessitatibus explicabo voluptate dolore ipsum dolorem commodi consequuntur animi, voluptatem, libero adipisci dolorum distinctio enim. Rem?</p>
+  <app-login></app-login>
+  <app-user></app-user>
+  <app-user-name></app-user-name>
+  <app-signin></app-signin>
+  <!-- click is the event in the next line -->
+  <button type="submit" (click)="getName('Haneef')">CLICK ME</button>
+  <br>
+  <br>
+  <button type="submit" (dblclick)="getConsole()">click me as well</button>
+  <br>
+  <br>
+  <!-- now getting the value of data from the frontend part -->
+  <!-- if i need the value that is typing in frontend then we can do this by adding id and id.val -->
+  <!-- key up mai pehle value ati hai  -->
+  <input type="text" #box1 placeholder="event KeyUp" (keyup)="getData(box1.value)">
+  <br>
+  <br>
+  <!-- key down is done slow and have prev press value -->
+  <input type="text" #box2 placeholder="event KeyDown" (keydown)="getData(box2.value)">
+  <br>
+  <br>
+  <button type="submit" (click)="getData('Haneef')">Also click me</button>
+
 </div>
+
+<!-- user- auth is complete module 
+Api calls are doe in services file validations are done in pips file 
+module are not  reusable in the angular
+module consist of mainly the whole components and as well as the pips and services -->
+
+<!-- important angular cli command -->
+

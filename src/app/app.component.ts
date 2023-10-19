@@ -8,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-app';
+  getName(name : string){
+    alert("Function " + name);
+  }
+  getConsole(){
+    console.warn("Hey This is testing");
+  }
+  getData(val: any){
+    console.log(val);
+  }
 }
